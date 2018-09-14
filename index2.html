@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crystal Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+
+<body>
+    <h1>Crystal Game</h1>
+    <br>
+    <h2>Computer Value</h2>
+    <p>Computer Value is: <span id="computerValue-Text"></span></p>
+    <!-- <p>Your Value is: <span id="userVal-Text"></span></p> -->
+    <div id="btnArea">
+        <img src="assets/images/crystal.png" alt="crystal1" class="crystal-btn" id="crystalBtn1" width="200px">
+        <img src="assets/images/crystal.png" alt="crystal2" class="crystal-btn" id="crystalBtn2" width="200px">
+        <img src="assets/images/crystal.png" alt="crystal3" class="crystal-btn" id="crystalBtn3" width="200px">
+        <img src="assets/images/crystal.png" alt="crystal4" class="crystal-btn" id="crystalBtn4" width="200px">
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        //Global variables
+        var ansValue;
+        var crystalValueArray = [];
+        var userValue = 0;
+
+        function gamestart() { //game start function
+            var max = 120;
+            var min = 19;
+            ansValue = Math.floor(Math.random() * (max - min) + min); //random ans
+            console.log(ansValue);
+
+            userValue = 0;
+            function randomArrayOfFour() { //random button value
+                var cryMax = 3;
+                var cryMin = 1;
+                // To prevent same value in the array...
+                for (var i = 0; i < 4; i++) {
+                    crystalValueArray[i] = Math.round(Math.random() * (cryMax - cryMin) + cryMin);
+                    cryMax += 3;
+                    cryMin += 3;
+                }
+                console.log(crystalValueArray);
+            }
+            randomArrayOfFour();
+            //assign data value to buttons
+            $('#crystalBtn1').attr("data-value", crystalValueArray[0]);
+            $('#crystalBtn2').attr("data-value", crystalValueArray[1]);
+            $('#crystalBtn3').attr("data-value", crystalValueArray[2]);
+            $('#crystalBtn4').attr("data-value", crystalValueArray[3]);
+        }
+        gamestart();
+        //addScore function
+        $('#computerValue-Text').text(ansValue);
+
+        // function buttonClicked(){
+        $('.crystal-btn').click(addScore)
+
+        function addScore() {
+            var crystalBtnValue = $(this).attr("data-value");
+            crystalBtnValue = parseInt(crystalBtnValue);
+            userValue += crystalBtnValue;
+            alert('Your score now is ' + userValue + " .");
+            console.log(userValue);
+            checkScore();
+        }
+
+        function checkScore() {
+            if (userValue === ansValue) {
+                alert('You win');
+                gamestart();
+            } else if (userValue > ansValue) {
+                alert('You lose');
+                gamestart();
+            }
+        }
+
+    </script>
+</body>
+
+</html>

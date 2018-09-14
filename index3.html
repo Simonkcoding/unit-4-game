@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crystal Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- reset css
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"> -->
+
+ <!--js css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    <link type="text/css" media="screen" href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script type="javascript" src="assets/javascript/game.js"></script>
+    
+</head>
+
+<body>
+   
+
+    <div class="container-fuild">
+        <div class="container">
+            <div class="banner">
+                <img src="assets/images/pickaxe.png" class="banner-picture" alt="pickaxe" width="50px">
+                <h1 style="display: inline; font-size:50px">Ore Hunter World</h1>
+                <img src="assets/images/pickaxe.png" class="banner-picture" alt="pickaxe" width="50px">
+            </div>
+            <hr>
+            <div class="left">
+                <div class="messager">
+                    <div class="picture">
+                        <img src="assets/images/run.gif" class="msg-picture-2" alt="run" width="150px" style="display:none">
+                        <img src="assets/images/pickaxe.png" class="msg-picture" alt="pickaxe" width="150px">
+
+                    </div>
+                    <div class="word-message">
+                        <h2>Click the Start Button to Start Your Quest!</h2>
+                    </div>
+                </div>
+                <div class="crystalArea">
+                    <img src="assets/images/ruby1.png" class="crystal-btn crystal-btn1" alt="ruby" width="120px" style="display: none">
+                    <img src="assets/images/ruby2.png" class="crystal-btn crystal-btn2" alt="ruby" width="120px" style="display: none">
+                    <img src="assets/images/start.png" class="start-btn" alt="start" width="220px">
+                    <img src="assets/images/ruby3.png" class="crystal-btn crystal-btn3" alt="ruby" width="120px" style="display: none">
+                    <img src="assets/images/ruby4.png" class="crystal-btn crystal-btn4" alt="ruby" width="120px" style="display: none">
+                </div>
+            </div>
+            <div class="right">
+                <div class="score">
+                    <h1>Mission objective:</h1>
+                    <h2>Energy Bar</h2>
+                    <div id="myProgress">
+                        <div id="myBar"></div>
+                    </div>
+                    <h2>Guild Point: <span class="guildValue-Text"></span></h2>
+                    <h2>You collected: <span class="playerValue-Text"></span></h2>
+                </div>
+                <div class="itemMsg">
+                    Items can help you when you are:
+                <br>
+                <ol>
+                    <li>attacked by monster</li>
+                    <li>running out of energy</li>
+                </ol>
+                </div>
+                <div class="itemArea">
+                    <img src="assets/images/item_unknown.png" class="item item-1" alt="item" width="120px">
+                    <img src="assets/images/item_unknown.png" class="item item-2" alt="item" width="120px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+   
+        
+</body>
+
+</html>
